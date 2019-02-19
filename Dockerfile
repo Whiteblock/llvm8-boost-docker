@@ -1,7 +1,10 @@
 FROM debian:stretch as built
 
+
+
 #install deps
 RUN echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch-8 main" >> /etc/apt/sources.list
+RUN wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 RUN apt-get update && \
     apt-get install -y libboost-all-dev make libllvm-8-ocaml-dev \
         libllvm8 llvm-8 llvm-8-dev llvm-8-doc llvm-8-examples llvm-8-runtime \
