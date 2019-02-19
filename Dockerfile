@@ -1,4 +1,4 @@
-FROM debian:stretch as built
+FROM ubuntu:latest as built
 
 ENV DEBIAN_FRONTEND noninteractive
 
