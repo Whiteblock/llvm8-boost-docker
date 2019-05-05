@@ -9,7 +9,7 @@ WORKDIR /served
 RUN mkdir served.build && cd served.build && cmake .. && SERVED_BUILD_SHARED=true make -j $(nproc) && make install
 
 WORKDIR /
-RUN git clone git@github.com:Whiteblock/json.git
+RUN git clone https://github.com/Whiteblock/json.git
 WORKDIR /json
 RUN mkdir build && cd build && cmake .. && make install
 
