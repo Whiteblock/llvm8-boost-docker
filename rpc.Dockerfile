@@ -2,7 +2,7 @@ FROM ubuntu:19.04
 
 #install deps
 RUN apt-get update && \
-    apt-get install -y libboost-all-dev rapidjson-dev make gcc gcc-8 g++ g++-8 g++-9 cmake git
+    apt-get install -y libspdlog-dev libboost-all-dev rapidjson-dev make gcc gcc-8 g++ g++-8 g++-9 cmake git
 
 RUN git clone https://github.com/Whiteblock/served
 WORKDIR /served
