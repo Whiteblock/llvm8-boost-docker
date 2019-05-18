@@ -9,8 +9,8 @@ WORKDIR /served
 RUN mkdir served.build && cd served.build && cmake .. && SERVED_BUILD_SHARED=true make -j $(nproc) && make install
 
 WORKDIR /
-RUN git clone https://github.com/Whiteblock/json.git && git checkout master
+RUN git clone https://github.com/Whiteblock/json.git 
 WORKDIR /json
-RUN mkdir build && cd build && cmake .. && make install
+RUN git checkout master && mkdir build && cd build && cmake .. && make install
 
 ENTRYPOINT ["/bin/bash"]
