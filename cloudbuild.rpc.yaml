@@ -1,7 +1,7 @@
 # https://cloud.google.com/cloud-build/docs/speeding-up-builds
 # https://cloud.google.com/cloud-build/docs/configuring-builds/substitute-variable-values
 substitutions:
-  _IMAGE: 'gcr.io/wb-genesis/cpp_base:latest'
+  _IMAGE: 'gcr.io/wb-genesis/cpp_base'
 timeout: '30m'
 steps:
 # allow these steps to fail, they try to pull cache first
@@ -24,7 +24,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'push', '$_IMAGE:$BRANCH_NAME' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', '$_IMAGE:$BRANCH_NAME' ]
+  args: [ 'push', '$_IMAGE:last' ]
 options:
  machineType: 'N1_HIGHCPU_32'
 
