@@ -17,6 +17,6 @@ WORKDIR /root
 RUN apt-get install -y wget
 RUN wget https://dl.google.com/go/go1.12.5.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.12.5.linux-amd64.tar.gz
 RUN echo 'export PATH="$PATH:/usr/local/go/bin"' >> /root/.bashrc
-RUN go get github.com/ethereum/go-ethereum
+RUN PATH="$PATH:/usr/local/go/bin" go get github.com/ethereum/go-ethereum
 
 ENTRYPOINT ["/bin/bash"]
