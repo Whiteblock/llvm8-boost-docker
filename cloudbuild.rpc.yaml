@@ -14,7 +14,7 @@ steps:
             'build',
             '-t', '$_IMAGE:$BRANCH_NAME',
             '-t', '$_IMAGE:$COMMIT_SHA',
-            '-t', '$_IMAGE:latest',
+            '-t', '$_IMAGE:rpc',
             #'--cache-from', '$_IMAGE:$BRANCH_NAME',
             '.'
         ]
@@ -24,8 +24,8 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'push', '$_IMAGE:$BRANCH_NAME' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'push', '$_IMAGE:latest' ]
+  args: [ 'push', '$_IMAGE:rpc' ]
 options:
  machineType: 'N1_HIGHCPU_32'
 
-images: [ '$_IMAGE:$COMMIT_SHA', '$_IMAGE:$BRANCH_NAME','$_IMAGE:latest']
+images: [ '$_IMAGE:$COMMIT_SHA', '$_IMAGE:$BRANCH_NAME','$_IMAGE:rpc']
