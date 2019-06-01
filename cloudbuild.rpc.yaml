@@ -12,7 +12,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
             'build',
-            '-f rpc.Dockerfile',
+            '-f', 'rpc.Dockerfile',
             '-t', '$_IMAGE:$BRANCH_NAME',
             '-t', '$_IMAGE:$COMMIT_SHA',
             '-t', '$_IMAGE:rpc',
