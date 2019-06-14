@@ -2,7 +2,7 @@
 # https://cloud.google.com/cloud-build/docs/configuring-builds/substitute-variable-values
 substitutions:
   _IMAGE: 'gcr.io/wb-genesis/cpp_base'
-timeout: '60m'
+timeout: '30m'
 steps:
 # allow these steps to fail, they try to pull cache first
 #- name: 'gcr.io/cloud-builders/docker'
