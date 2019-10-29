@@ -14,12 +14,12 @@ RUN apt-get install -y autoconf libtool pkg-config curl libgrpc-dev libyaml-cpp-
 #clang-8 clang-9 clang-tools-9 clang-tools
 #cppcheck doxygen libclang-8-dev libc++-9-dev libc++abi-9-dev lld-9 lldb-9
 
-RUN git clone https://github.com/Whiteblock/served
+RUN git clone https://github.com/whiteblock/served
 WORKDIR /served
 RUN mkdir served.build && cd served.build && cmake .. && SERVED_BUILD_SHARED=true make -j $(nproc) && make install
 
 WORKDIR /
-RUN git clone https://github.com/Whiteblock/json.git 
+RUN git clone https://github.com/whiteblock/json.git 
 WORKDIR /json
 RUN git checkout master && mkdir build && cd build && cmake .. && make -j$(nproc) && make install
 
