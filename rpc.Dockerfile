@@ -8,7 +8,7 @@ RUN echo "deb http://apt.llvm.org/stretch/ llvm-toolchain-stretch main" >> /etc/
 
 #install deps
 RUN apt-get update
-RUN apt-get install -y libspdlog-dev libboost-all-dev make
+RUN apt-get install -y libspdlog-dev libboost-all-dev make libtbb-dev
 RUN apt-get install -y gcc gcc-8 g++ g++-8 g++-9 cmake git git-extras libgflags-dev libgtest-dev
 RUN apt-get install -y autoconf libtool pkg-config curl libgrpc-dev libyaml-cpp-dev
 #clang-8 clang-9 clang-tools-9 clang-tools
